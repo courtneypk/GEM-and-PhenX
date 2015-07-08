@@ -1,0 +1,62 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix pkc: <http://www.pkc.com/> .
+@prefix gem: <http://www.pkc.com/gem/> .
+@prefix phenx: <http://www.pkc.com/phenx/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# First we define the GEM concepts:
+
+gem:gemThesaurus a skos:ConceptScheme;
+	dct:title “Simple thesaurus for GEM”@en;
+	dct:creator pkc:paulCourtney.
+
+gem:measure a skos:concept;
+	skos:prefLabel “Measure”@en;
+	skos:inScheme gem:gemThesaurus.
+
+gem:construct a skos:concept.
+	skos:prefLabel “Concept”@en;
+	skos:inScheme gem:gemThesaurus.
+
+gem:dataset a skos:concept.
+	skos:prefLabel “Dataset”@en;
+	skos:inScheme gem:gemThesaurus.
+
+
+phenx:phenxThesaurus a skos:ConceptScheme;
+	dct:title “Simple thesaurus for PhenX”@en;
+	dct:creator pkc:paulCourtney.
+
+phenx:domain a skos:concept.
+	skos:prefLabel “Domain”@en;
+	skos:inScheme phenx:phenxThesaurus
+	skos:definition “A PhenX domain is a field of research with a unifying theme and easily enumerated quantitative and qualitative measures (e.g., demographics, anthropometrics, organ systems, complex diseases, and lifestyle factors)”@en.
+
+phenx:measure a skos:concept.
+	skos:prefLabel “Measure”@en;
+	skos:inScheme phenx:phenxThesaurus
+	skos:definition “A measure refers broadly to a standardized way of capturing data on a certain characteristic of, or relating to, a study subject“@en.
+
+phenx:protocol a skos:concept.
+	skos:prefLabel “Protocol”@en;
+	skos:inScheme phenx:phenxThesaurus
+	skos:definition “A protocol is a standard procedure recommended by a Working Group for investigators to collect and record a measure“@en.
+
+phenx:collection a skos:concept.
+	skos:prefLabel “Collection”@en;
+	skos:inScheme phenx:phenxThesaurus
+	skos:definition “A collection of measures with a shared characteristic, target population or topic. The measures included in a Collection may cut across research domains“@en.
+
+phenx:data-collection-worksheet a skos:concept.
+	skos:prefLabel “Data Collection Worksheet”@en;
+	skos:altLabel “DCW”@en;
+	skos:inScheme phenx:phenxThesaurus
+	skos:definition “The DCW identifies each data item required by a protocol. The DCW helps investigators integrate selected PhenX measures into their data collection instrument“@en.
+
+phenx:data-dictionary a skos:concept.
+	skos:prefLabel “Data Dictionary”@en
+	skos:altLabel “DD”@en;
+	skos:inScheme phenx:phenxThesaurus
+	skos:definition “The DD lists each variable included in a protocol with its attributes, including variable names and unique identifiers. The organization, content, and electronic format of the DD fully support data submission to the database of Genotypes and Phenotypes (dbGaP)“@en.
